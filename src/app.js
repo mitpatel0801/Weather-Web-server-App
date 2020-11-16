@@ -6,7 +6,8 @@ const hbs = require('hbs');
 const geoCode = require('./Utility/GeoCode');
 const forcast = require('./Utility/forcast');
 
-const app = express()
+const app = express();
+const port = process.env.PORT || 3000;
 
 //Paths
 const htmlPath = path.join(__dirname, '../public')
@@ -88,6 +89,6 @@ app.get('*', (req, res) => {
 })
 
 
-app.listen(3000, () => {
-    console.log("Local Host is running")
+app.listen(port, () => {
+    console.log("Local Host is running on" + port);
 })
