@@ -52,6 +52,7 @@ app.get('/weather', (req, res) => {
                 location: data.properAddress,
                 temperature: forcastData.temperature,
                 feelsLike: forcastData.feelslike,
+                humidity: forcastData.humidity,
             })
         })
     })
@@ -90,5 +91,5 @@ app.get('*', (req, res) => {
 
 
 app.listen(port, () => {
-    console.log("Local Host is running on" + port);
+    console.log("Local Host is running on " + port);
 })
