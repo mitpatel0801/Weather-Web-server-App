@@ -10,7 +10,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 //Paths
-const htmlPath = path.join(__dirname, '../public')
+const publicPath = path.join(__dirname, '../public')
 const tampletPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(__dirname, '../templates/partials')
 
@@ -20,7 +20,7 @@ app.set('views', tampletPath)
 hbs.registerPartials(partialsPath)
 
 //for static page 
-app.use(express.static(htmlPath))
+app.use(express.static(publicPath))
 
 //Default Web Page
 app.get('', (req, res) => {
